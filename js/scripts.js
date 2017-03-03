@@ -9,9 +9,9 @@ $(document).ready(function(){
 		["900 years of time and space and I’ve never met anyone who wasn’t important.", "The Doctor (Doctor Who)"],
 		["We're all stories in the end, so make it a good one.", "The Doctor (Doctor Who)"],
 		["One heartbeat away from the presidency and not a single vote cast in my name. Democracy is so overrated", "Frank Underwood (House of Cards)"],
-		["You know the difference between me and you? I bleed red and you bleed green. I look at you these days, String, you know what I see? I see a man without a country. Not hard enough for this right here and maybe, just maybe, not smart enough for them out there.", "Avon Barksdale (The Wire)"],
+		["You know the difference between me and you? I bleed red and you bleed green. You know what I see? I see a man without a country. Not hard enough for this right here and maybe, just maybe, not smart enough for them out there.", "Avon Barksdale (The Wire)"],
 		["I think, maybe, the best things, the richest things aren't supposed to come easily, and that sometimes the moments that make the most sense happen when everything else doesn't", "Juliet O' Hara (Psych)"],
-		["Which license? My pilot's license? It's out back in the Cessna. Or perhaps you're referring to my license to kill. Revoked. Problems at the Kazakhstanian border. I would tell you but then I'd have to kill you which I can't do because my license to kill has been revoked.", "Shawn Specner (Psych)"]
+		["Divorce is always hard. Especially on the kids. ‘Course I am the result of my parents having stayed together so ya never know.", "George Costanza (Seinfeld)"]
 
 	];
 	var books = [
@@ -32,12 +32,12 @@ $(document).ready(function(){
 		["I used to care what people thought, but now I care more. I mean, nobody out here's got it figured out. So therefore, I've lost all hope of a happy ending. Depending on whether or not it's worth it, so insecure, no one's perfect", "Childish Gambino (3005)"],
 		["And you don't wanna stay there cause them your worst cousins. Got roaches at their crib like them your first cousins", "Kanye West (Family Business)"],
 		["That's life, that's what all the people say. You're ridin' high in April, shot down in May. But I know I'm gonna change that tune. When I'm back on top, back on top in June", "Frank Sinatra (That's Life)"],
+		["Relationships look closer in that rearview. Finally slow it down and realize she ain't nowhere near you.", "Childish Gambino (Ms. Daisy)"],
+/*		["Music Quote2", "Artist2"],
 		["Music Quote2", "Artist2"],
 		["Music Quote2", "Artist2"],
 		["Music Quote2", "Artist2"],
-		["Music Quote2", "Artist2"],
-		["Music Quote2", "Artist2"],
-		["Music Quote2", "Artist2"]
+		["Music Quote2", "Artist2"]*/
 	];
 	
 	
@@ -60,32 +60,38 @@ $(document).ready(function(){
 		}
 			randNum = generator(library);
 			$('#quote').html('" ' + library[randNum][0] + ' "');
-			$('#author').html(library[randNum][1]);
-		//pull quote from correct library
-		//return quote in format of source.[randNum][0]
-		//also return author in format of source.[randNum][1]
-	};
-
-	$('#generator').click(function(){
+			$('#author').html('- ' + library[randNum][1]);
+	
 		$("#quote").css('opacity', 0);
-        $('#quote').animate({opacity: 1}, 600);
+        $('#quote').animate({opacity: 1}, 1000);
 
         $("#author").css('opacity', 0);
-        $('#author').animate({opacity: 1}, 800);
+        $('#author').animate({opacity: 1}, 1000);
+        library.splice([randNum], 1);
+	};
+	function greyout(element){
+          if ($(element).hasClass('.greyout')!==true) {
+          	$(element).addClass(' greyout');
+          };
+      	};
+	$('#generator').click(function(){
 
           getQuote();
-          console.log([randNum])
-          library.splice([randNum], 1);
+          greyout('h1');
+          greyout('.end');
 		});
 
 	$('#option1').parent().click(function(){
 		$('#background').removeClass('books-theme music-theme movies-theme').addClass('movies-theme')
+
 	});
 	$('#option2').parent().click(function(){
 		$('#background').removeClass('books-theme music-theme movies-theme').addClass('books-theme')
+	
 	});
 	$('#option3').parent().click(function(){
 		$('#background').removeClass('books-theme music-theme movies-theme').addClass('music-theme')
+		
 	});
-
+	getQuote();
 });

@@ -367,8 +367,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(/fonts/bootstrap/glyphicons-halflings-regular.eot?1487288556);
-  src: url(/fonts/bootstrap/glyphicons-halflings-regular.eot?&1487288556#iefix) format("embedded-opentype"), url(/fonts/bootstrap/glyphicons-halflings-regular.woff2?1487288556) format("woff2"), url(/fonts/bootstrap/glyphicons-halflings-regular.woff?1487288556) format("woff"), url(/fonts/bootstrap/glyphicons-halflings-regular.ttf?1487288556) format("truetype"), url(/fonts/bootstrap/glyphicons-halflings-regular.svg?1487288556#glyphicons_halflingsregular) format("svg");
+  src: url(/fonts/bootstrap/glyphicons-halflings-regular.eot?1487288558);
+  src: url(/fonts/bootstrap/glyphicons-halflings-regular.eot?&1487288558#iefix) format("embedded-opentype"), url(/fonts/bootstrap/glyphicons-halflings-regular.woff2?1487288558) format("woff2"), url(/fonts/bootstrap/glyphicons-halflings-regular.woff?1487288558) format("woff"), url(/fonts/bootstrap/glyphicons-halflings-regular.ttf?1487288558) format("truetype"), url(/fonts/bootstrap/glyphicons-halflings-regular.svg?1487288558#glyphicons_halflingsregular) format("svg");
 }
 /* line 24, ../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_glyphicons.scss */
 .glyphicon {
@@ -8788,21 +8788,146 @@ button.close {
     display: none !important;
   }
 }
-/* line 10, ../sass/styles.scss */
-.one, .two {
-  height: 100px;
-  background: blue;
+/* line 12, ../sass/styles.scss */
+body {
+  background-color: #444;
+  font-family: 'Lato', serif;
+}
+
+/* line 17, ../sass/styles.scss */
+h1 {
   color: #fff;
-  border: 5px solid #000;
   transition: 2s;
+  opacity: .7;
+  margin-bottom: 20px;
+}
+/* line 23, ../sass/styles.scss */
+h1:hover {
+  opacity: 1;
 }
 
-/* line 19, ../sass/styles.scss */
-.bigbooty {
-  display: none;
+/* line 27, ../sass/styles.scss */
+.end {
+  margin-top: 25px;
+  color: #fff;
+  transition: 2s;
+  opacity: .7;
+}
+/* line 33, ../sass/styles.scss */
+.end:hover {
+  opacity: 1;
+  font-size: 16px;
 }
 
-/* line 22, ../sass/styles.scss */
-.container {
-  width: 80%;
+/* line 38, ../sass/styles.scss */
+.greyout {
+  opacity: .2;
+}
+
+/* line 41, ../sass/styles.scss */
+.container-fluid {
+  height: 100vh;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* line 55, ../sass/styles.scss */
+.quote {
+  color: #fff;
+  font-size: 22px;
+  opacity: 0;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* line 63, ../sass/styles.scss */
+.author {
+  color: #888;
+  text-align: right;
+  opacity: 0;
+}
+
+/* line 68, ../sass/styles.scss */
+.buttons {
+  margin: 10px 0px;
+}
+
+/* line 71, ../sass/styles.scss */
+.movies-theme {
+  background-image: url("../img/theater.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 78, ../sass/styles.scss */
+.books-theme {
+  background-image: url("../img/books.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 84, ../sass/styles.scss */
+.music-theme {
+  background-image: url("../img/albums.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 91, ../sass/styles.scss */
+.btn-group {
+  transition: 1s;
+}
+/* line 93, ../sass/styles.scss */
+.btn-group label {
+  outline: none;
+}
+/* line 95, ../sass/styles.scss */
+.btn-group label:hover {
+  background-color: #444;
+  outline: none;
+}
+/* line 99, ../sass/styles.scss */
+.btn-group label:focus {
+  background-color: #444;
+  outline: none;
+}
+/* line 105, ../sass/styles.scss */
+.btn-group .btn {
+  background-color: #666;
+  border: 1px solid #333;
+  outline: none;
+}
+/* line 110, ../sass/styles.scss */
+.btn-group .btn:hover {
+  background-color: #444;
+  outline: none;
+}
+/* line 114, ../sass/styles.scss */
+.btn-group .btn:focus {
+  background-color: #444;
+  outline: none;
+}
+/* line 120, ../sass/styles.scss */
+.btn-group .active {
+  background-color: #333;
+}
+/* line 122, ../sass/styles.scss */
+.btn-group .active:hover {
+  background-color: #333;
+  outline: none;
+}
+/* line 126, ../sass/styles.scss */
+.btn-group .active:focus {
+  background-color: #333;
+  outline: none;
+}
+
+@media only screen and (min-width: 361px) {
+  /* line 134, ../sass/styles.scss */
+  .quote {
+    font-size: 28px;
+  }
 }
