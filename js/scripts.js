@@ -40,58 +40,62 @@ $(document).ready(function(){
 		["Music Quote2", "Artist2"]*/
 	];
 	
-	
-	function generator(library){
-		quote = Math.floor(Math.random() * (library.length));	
-		return quote;
-	}
-	//Generates a random number and pulls a quote from the quotes object based on checkbox status
-	var randNum = 0;
-	var library;
-	function getQuote(){
-		
-		//figure out which button is active
+	//sets library directory to firt library
+	var library = shuffle(movies);
+
+	//shuffles a library when called
+	function shuffle(o) {
+	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	return o;
+};
+	//sets the correct library when called (tab clicked)
+	function pickLibrary(){
 		if ($('#option1').parent().hasClass('active')) {
 			library = movies;
 		} else if ($('#option2').parent().hasClass('active')) {
 			library = books;
 		} else {
 			library = music;
-		}
-			randNum = generator(library);
-			$('#quote').html('" ' + library[randNum][0] + ' "');
-			$('#author').html('- ' + library[randNum][1]);
+		};
+	};
+
+	//returns the quote to the html
+	function getQuote(){
+		
+		$('#quote').html('" ' + library[0][0] + ' "');
+		$('#author').html('- ' + library[0][1]);
 	
 		$("#quote").css('opacity', 0);
         $('#quote').animate({opacity: 1}, 1000);
 
         $("#author").css('opacity', 0);
         $('#author').animate({opacity: 1}, 1000);
-        library.splice([randNum], 1);
+        library.push(library.shift()); 
 	};
+	//fades text when loading new quote for 
 	function greyout(element){
           if ($(element).hasClass('.greyout')!==true) {
           	$(element).addClass(' greyout');
           };
       	};
+	//Generates new quote 
 	$('#generator').click(function(){
-
           getQuote();
           greyout('h1');
           greyout('.end');
 		});
-
+	//changes active library
 	$('#option1').parent().click(function(){
 		$('#background').removeClass('books-theme music-theme movies-theme').addClass('movies-theme')
-
+		library = shuffle(movies);
 	});
 	$('#option2').parent().click(function(){
 		$('#background').removeClass('books-theme music-theme movies-theme').addClass('books-theme')
-	
+		library = shuffle(books);
 	});
 	$('#option3').parent().click(function(){
 		$('#background').removeClass('books-theme music-theme movies-theme').addClass('music-theme')
-		
+		library = shuffle(music);
 	});
 	getQuote();
 });
