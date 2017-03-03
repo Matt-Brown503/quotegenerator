@@ -8799,7 +8799,7 @@ h1 {
   color: #fff;
   transition: 2s;
   opacity: .7;
-  margin-bottom: 20px;
+  font-size: 28px;
 }
 /* line 23, ../sass/styles.scss */
 h1:hover {
@@ -8845,9 +8845,9 @@ h1:hover {
 
 /* line 63, ../sass/styles.scss */
 .author {
-  color: #888;
-  text-align: right;
+  color: #999;
   opacity: 0;
+  margin: 10px 0px;
 }
 
 /* line 68, ../sass/styles.scss */
@@ -8877,57 +8877,69 @@ h1:hover {
 }
 
 /* line 91, ../sass/styles.scss */
+.comic-theme {
+  background-image: url("../img/comics.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+/* line 98, ../sass/styles.scss */
 .btn-group {
   transition: 1s;
 }
-/* line 93, ../sass/styles.scss */
+/* line 100, ../sass/styles.scss */
 .btn-group label {
   outline: none;
 }
-/* line 95, ../sass/styles.scss */
+/* line 102, ../sass/styles.scss */
 .btn-group label:hover {
   background-color: #444;
   outline: none;
 }
-/* line 99, ../sass/styles.scss */
+/* line 106, ../sass/styles.scss */
 .btn-group label:focus {
   background-color: #444;
   outline: none;
 }
-/* line 105, ../sass/styles.scss */
+/* line 112, ../sass/styles.scss */
 .btn-group .btn {
   background-color: #666;
   border: 1px solid #333;
   outline: none;
 }
-/* line 110, ../sass/styles.scss */
+/* line 117, ../sass/styles.scss */
 .btn-group .btn:hover {
   background-color: #444;
   outline: none;
 }
-/* line 114, ../sass/styles.scss */
+/* line 121, ../sass/styles.scss */
 .btn-group .btn:focus {
   background-color: #444;
   outline: none;
 }
-/* line 120, ../sass/styles.scss */
+/* line 127, ../sass/styles.scss */
 .btn-group .active {
   background-color: #333;
 }
-/* line 122, ../sass/styles.scss */
+/* line 129, ../sass/styles.scss */
 .btn-group .active:hover {
   background-color: #333;
   outline: none;
 }
-/* line 126, ../sass/styles.scss */
+/* line 133, ../sass/styles.scss */
 .btn-group .active:focus {
   background-color: #333;
   outline: none;
 }
 
 @media only screen and (min-width: 361px) {
-  /* line 134, ../sass/styles.scss */
+  /* line 141, ../sass/styles.scss */
   .quote {
     font-size: 28px;
+  }
+
+  /* line 146, ../sass/styles.scss */
+  h1 {
+    font-size: 36px;
   }
 }

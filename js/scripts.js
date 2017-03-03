@@ -11,7 +11,8 @@ $(document).ready(function(){
 		["One heartbeat away from the presidency and not a single vote cast in my name. Democracy is so overrated", "Frank Underwood (House of Cards)"],
 		["You know the difference between me and you? I bleed red and you bleed green. You know what I see? I see a man without a country. Not hard enough for this right here and maybe, just maybe, not smart enough for them out there.", "Avon Barksdale (The Wire)"],
 		["I think, maybe, the best things, the richest things aren't supposed to come easily, and that sometimes the moments that make the most sense happen when everything else doesn't", "Juliet O' Hara (Psych)"],
-		["Divorce is always hard. Especially on the kids. ‘Course I am the result of my parents having stayed together so ya never know.", "George Costanza (Seinfeld)"]
+		["Divorce is always hard. Especially on the kids. ‘Course I am the result of my parents having stayed together so ya never know.", "George Costanza (Seinfeld)"],
+		["Fate is fluid, Captain Wegener. Destiny is in the hands of men.", "Nobusuke Tagomi (Man In The High Castle)"]
 
 	];
 	var books = [
@@ -21,7 +22,7 @@ $(document).ready(function(){
 		["For me the takeaway of these stories is that, no matter how many options we seem to have on our screens, we should be careful not to lose track of the human beings behind them.", "Aziz Ansari (Modern Romance: An Investigation)"],
 		["Whatever the problem, be part of the solution. Don’t just sit around raising questions and pointing out obstacles.", "Tina Fey (Bossypants)"],
 		["Our job in this life is not to shape ourselves into some ideal we imagine we ought to be, but to find out who we already are and become it.", "Steven Pressfield (The War of Art)"],
-		["Fear doesn't go away. The warrior and the artist live by the same code of necessity, which dictates that the battle must be fought anew every day.", "Steven Pressfield (The War of Art"],
+		["Fear doesn't go away. The warrior and the artist live by the same code of necessity, which dictates that the battle must be fought anew every day.", "Steven Pressfield (The War of Art)"],
 		["It’s no use going back to yesterday, because I was a different person then.", "Lewis Carroll (Alice in Wonderland)"],
 		["When you have eliminated all which is impossible, then whatever remains, however improbable, must be the truth.", "Arthur Conan Doyle (Sherlock Holmes)"],
 		["As honest as you can expect a man to be in a world where its going out of style.", "Raymond Chandler (The Big Sleep)"]
@@ -39,6 +40,20 @@ $(document).ready(function(){
 		["Music Quote2", "Artist2"],
 		["Music Quote2", "Artist2"]*/
 	];
+
+	var comics = [
+		["Gentlemen. They say that when you die, you can't take it with you. Which begs the question: exactly what am I gonna do with all these bullets?","Frank Castle (Secret Wars #1)"],
+		["Some people don't want to be saved. Because saving means changing. And changing is always harder than staying the same.","Dick Grayson (Battle For the Cowl #3)"],
+		["We have a saying, my people. 'Don't kill if you can wound, don't wound if you can subdue, don't subdue if you can pacify, and don't raise your hand at all until you've extended it.","Wonder Woman (Wonder Woman: Vol 3 #25)"],
+		["I'm the best at what I do, and what I do isn't very nice.","Wolverine (Wolverine #1)"],
+		["It's about remembering someone who was so important to me I was going to spend the rest of my life with her. I didn't know that meant she would only get to spend the rest of her life with me.","Peter Parker (Spiderman: Blue)"],
+		["With great power, there must also come great responsibility.","Stan Lee (Amazing Fantasy #15)"],
+		["Seriously, what is it with New York? Would it kill you to invade Denver once? But no. You've always got to destroy Central Park or eat the Statue of Liberty... Bad guys are such tourists.","Spiderman (Amazing Spiderman Family #1)"],
+	/*	["",""],
+		["",""],
+		["",""]*/
+
+	];
 	
 	//sets library directory to firt library
 	var library = shuffle(movies);
@@ -54,15 +69,17 @@ $(document).ready(function(){
 			library = movies;
 		} else if ($('#option2').parent().hasClass('active')) {
 			library = books;
-		} else {
+		} else if ($('#option3').parent().hasClass('active')) {
 			library = music;
+		}else {
+			library = comics;
 		};
 	};
 
 	//returns the quote to the html
 	function getQuote(){
 		
-		$('#quote').html('" ' + library[0][0] + ' "');
+		$('#quote').html('"' + library[0][0] + '"');
 		$('#author').html('- ' + library[0][1]);
 	
 		$("#quote").css('opacity', 0);
@@ -86,16 +103,20 @@ $(document).ready(function(){
 		});
 	//changes active library
 	$('#option1').parent().click(function(){
-		$('#background').removeClass('books-theme music-theme movies-theme').addClass('movies-theme')
+		$('#background').removeClass('books-theme music-theme movies-theme comic-theme').addClass('movies-theme')
 		library = shuffle(movies);
 	});
 	$('#option2').parent().click(function(){
-		$('#background').removeClass('books-theme music-theme movies-theme').addClass('books-theme')
+		$('#background').removeClass('books-theme music-theme movies-theme comic-theme').addClass('books-theme')
 		library = shuffle(books);
 	});
 	$('#option3').parent().click(function(){
-		$('#background').removeClass('books-theme music-theme movies-theme').addClass('music-theme')
+		$('#background').removeClass('books-theme music-theme movies-theme comic-theme').addClass('music-theme')
 		library = shuffle(music);
+	});
+	$('#option4').parent().click(function(){
+		$('#background').removeClass('books-theme music-theme movies-theme').addClass('comic-theme')
+		library = shuffle(comics);
 	});
 	getQuote();
 });

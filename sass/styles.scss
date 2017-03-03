@@ -18,7 +18,7 @@ h1 {
 	color: #fff;
 	transition: 2s;
 	opacity:.7;
-	margin-bottom: 20px;
+	font-size: 28px;
 
 	&:hover {
 		opacity: 1;
@@ -61,9 +61,9 @@ h1 {
 }
 
 .author {
-	color: #888;
-	text-align: right;
+	color: #999;
 	opacity: 0;
+	margin: 10px 0px;
 }
 .buttons {
 	margin: 10px 0px;
@@ -83,6 +83,13 @@ h1 {
 }
 .music-theme {
 	background-image: url('../img/albums.jpg');
+	background-position: center;
+	background-size: cover;
+
+}
+
+.comic-theme {
+	background-image: url('../img/comics.jpg');
 	background-position: center;
 	background-size: cover;
 
@@ -135,6 +142,9 @@ h1 {
 
 	font-size: 28px;
 
+	};
+	h1 {
+	font-size: 36px;
 	}
 }
 
