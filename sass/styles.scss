@@ -1,0 +1,74 @@
+// Import Bootstrap Compass integration
+@import "bootstrap-compass";
+
+// Import custom Bootstrap variables
+@import "bootstrap-variables";
+
+// Import Bootstrap for Sass
+@import "bootstrap";
+
+@import 'partials/base';
+
+body {
+	background-color: #444;
+	font-family: 'Lato', serif;
+	}
+
+h1 {
+	color: #fff;
+}
+.container-fluid {
+	height: 100vh;
+	transition: 1s;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.quote-box {
+	background-color: rgba(0,0,0, .9);
+	border-radius: 5px;
+	padding: 20px;
+	border: 10px solid #fff;
+	 p {
+	 	font-size: px;
+	 }
+
+}
+
+.quote {
+	color: #fff;
+	font-size: 20px;
+	opacity: 0;
+}
+
+.author {
+	color: #888;
+	text-align: right;
+}
+.buttons {
+	margin: 10px 0px;
+}
+.movies-theme {
+	background-image: url('../img/theater.jpg');
+	background-position: center;
+	background-size: cover;
+
+}
+
+.books-theme {
+	background-image: url('../img/books.jpg');
+	background-position: center;
+	background-size: cover;
+
+}
+.music-theme {
+	background-image: url('../img/albums.jpg');
+	background-position: center;
+	background-size: cover;
+
+}
+
+
+
+
